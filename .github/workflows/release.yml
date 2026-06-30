@@ -14,11 +14,9 @@ jobs:
         - target_os: ubuntu
           target_os_version: 22.04
           extensions:  deb ddeb
-          artifact_prefix: deb-packages-gpbackup
         - target_os: ubuntu
           target_os_version: 24.04
           extensions:  deb ddeb
-          artifact_prefix: deb-packages-gpbackup
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -31,4 +29,4 @@ jobs:
           target_os:            ${{ matrix.target_os }}
           target_os_version:    ${{ matrix.target_os_version }}
           extensions:           ${{ matrix.extensions }}
-          artifact_prefix:      ${{ matrix.artifact_prefix }}
+          artifact_prefix:      gpbackup-deb-ubuntu${{ matrix.target_os_version }}
